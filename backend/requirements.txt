@@ -1,4 +1,5 @@
-flask
-flask-socketio
-flask-cors
-simple-websocket
+flask>=3.0.0
+flask-socketio>=5.3.6
+flask-cors>=4.0.0
+simple-websocket>=1.0.0
+werkzeug>=3.0.0
