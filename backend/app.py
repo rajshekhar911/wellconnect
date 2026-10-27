@@ -575,5 +575,61 @@ def on_delete_message(data):
     push_user_list_to(receiver_id)
 
 
+@app.route('/')
+def home():
+    return '''
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>WellConnect Server</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background: #f5f5f5;
+            }
+
+            .box {
+                background: white;
+                padding: 40px;
+                border-radius: 15px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+                text-align: center;
+            }
+
+            .status {
+                color: #16a34a;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            .dot {
+                display: inline-block;
+                width: 12px;
+                height: 12px;
+                background: #16a34a;
+                border-radius: 50%;
+                margin-right: 8px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <h1>WellConnect Server</h1>
+            <p class="status">
+                <span class="dot"></span>
+                Server is connected and running
+            </p>
+            <p>Flask + Socket.IO</p>
+            <p>Port: 5000</p>
+        </div>
+    </body>
+    </html>
+    '''
+
 if __name__ == '__main__':
     socketio.run(app, host='0.0.0.0', port=5000, debug=True)
